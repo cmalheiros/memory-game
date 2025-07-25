@@ -1,0 +1,367 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo para melhor visualização em telas pequenas */
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease; /* Transição suave para o feedback de cor */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+}
+
+/* Informações do Jogador */
+.player-info {
+    margin-bottom: 25px;
+}
+
+.player-info label {
+    font-size: 1.1em;
+    color: #555;
+    margin-right: 10px;
+}
+
+.player-info input[type="text"] {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: calc(100% - 160px); /* Ajusta largura para caber o botão */
+    max-width: 250px;
+    margin-right: 10px;
+}
+
+.player-info button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+.player-info button:hover {
+    background-color: #0056b3;
+}
+
+/* Placar */
+.score-board {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #444;
+}
+
+.score-board span {
+    color: #007bff;
+}
+
+/* Tabuleiro do Jogo */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsivo: 100px mínimo */
+    gap: 15px;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    min-height: 400px; /* Garante altura mínima para o tabuleiro */
+}
+
+.card {
+    width: 100%;
+    height: 100px; /* Altura fixa para as cartas */
+    background-color: #81a4cd; /* Cor de fundo da carta virada */
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.4s;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card.matched {
+    opacity: 0.5; /* Cartas combinadas ficam um pouco transparentes */
+    cursor: default;
+}
+
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-front {
+    background-color: #81a4cd; /* Cor da frente da carta (escondida) */
+    color: white;
+    font-size: 3em;
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    background-color: #81a4cd; /* Cor do verso da carta (visível) */
+    color: white;
+    font-size: 3em;
+}
+
+.card img {
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+/* Feedback de cores de fundo */
+body.correct-flash {
+    background-color: #d4edda; /* Verde claro */
+}
+
+body.wrong-flash {
+    background-color: #f8d7da; /* Vermelho claro */
+}
+
+/* Vencedores */
+.winner-board {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+}
+
+.winner-board h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.winner-board ul {
+    list-style: none;
+    padding: 0;
+    max-height: 150px; /* Limita a altura para scroll */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.winner-board li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.winner-board li:last-child {
+    border-bottom: none;
+}
+
+.winner-board li span:first-child {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.winner-board li span:last-child {
+    color: #555;
+    font-size: 0.9em;
+}
+
+/* Botão de Reiniciar */
+#resetGameBtn {
+    background-color: #dc3545;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 25px;
+    transition: background-color 0.2s ease;
+}
+
+#resetGameBtn:hover {
+    background-color: #c82333;
+}
+
+/* ... (código CSS existente) ... */
+
+/* Nova seção para adivinhar o nome do estado */
+.guess-section {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.guess-section input[type="text"] {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+    width: calc(100% - 160px); /* Ajusta largura para o botão */
+    max-width: 300px;
+}
+
+.guess-section button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.2s ease;
+}
+
+.guess-section button:hover {
+    background-color: #218838;
+}
+
+.guess-section button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.feedback-message {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+    width: 100%;
+    text-align: center;
+}
+
+.feedback-message.correct {
+    color: #28a745; /* Verde para acerto */
+}
+
+.feedback-message.wrong {
+    color: #dc3545; /* Vermelho para erro */
+}
+
+/* ... (restante do código CSS existente) ... */
+
+/* Responsividade para a nova seção */
+@media (max-width: 768px) {
+    .guess-section input[type="text"] {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 10px;
+    }
+    .guess-section button {
+        width: 100%;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .player-info input[type="text"] {
+        width: calc(100% - 150px);
+        margin-bottom: 10px;
+        max-width: none;
+    }
+
+    .player-info button {
+        width: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .score-board {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 1.1em;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Reduz tamanho mínimo */
+        gap: 10px;
+    }
+
+    .card {
+        height: 80px; /* Reduz altura da carta */
+    }
+
+    .card img {
+        max-width: 80%;
+        max-height: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .player-info input[type="text"] {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .player-info button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas muito pequenas */
+    }
+
+    .card {
+        height: 70px; /* Altura ainda menor para telas pequenas */
+    }
+}
