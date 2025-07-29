@@ -110,6 +110,51 @@ h1 {
     transform: rotateY(180deg);
 }
 
+/* Isso garante que a parte da frente da carta seja visível quando virada */
+.card.flipped .card-inner,
+.card.matched .card-inner {
+    transform: rotateY(0deg);
+}
+
+/* Isso esconde a parte de trás quando a carta está virada ou combinada */
+.card.flipped .card-back,
+.card.matched .card-back {
+    display: none;
+}
+
+/* Isso garante que a parte da frente esteja visível */
+.card.flipped .card-front,
+.card.matched .card-front {
+    display: block; /* Ou visibility: visible; */
+}
+/* Garante que o interior da carta gire para mostrar a frente */
+.card.flipped .card-inner,
+.card.matched .card-inner {
+    transform: rotateY(0deg);
+}
+
+/* Esconde o verso da carta quando está virada ou combinada */
+.card.flipped .card-back,
+.card.matched .card-back {
+    display: none;
+}
+
+/* Mostra a frente da carta (a bandeira) quando está virada ou combinada */
+.card.flipped .card-front,
+.card.matched .card-front {
+    display: block; /* Ou visibility: visible; Depende do seu CSS original */
+    backface-visibility: hidden; /* Garante que a parte de trás seja invisível quando a frente está mostrando */
+}
+
+/* Opcional: Estilo para cartas acertadas, se quiser alguma borda ou efeito */
+.card.matched {
+    /* Por exemplo, para desabilitar o cursor de clique */
+    cursor: default;
+    /* Para uma leve opacidade ou borda para indicar que está "concluído" */
+    /* opacity: 0.8; */
+    /* border: 2px solid #4CAF50; */
+}
+
 .card.matched {
     opacity: 0.5; /* Cartas combinadas ficam um pouco transparentes */
     cursor: default;
