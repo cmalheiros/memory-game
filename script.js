@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'São Paulo', img: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg' },
         { name: 'Sergipe', img: 'https://upload.wikimedia.org/wikipedia/commons/b/be/Bandeira_de_Sergipe.svg' },
         { name: 'Tocantins', img: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Bandeira_do_Tocantins.svg' },
-        { name: 'sao paulo', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz5xBaueRkEyK9EFR-LWaTZCk6y79Uq5p1XA&s'}
+        
 
     ];
 
