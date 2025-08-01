@@ -51,8 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'São Paulo', img: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg' },
         { name: 'Sergipe', img: 'https://upload.wikimedia.org/wikipedia/commons/b/be/Bandeira_de_Sergipe.svg' },
         { name: 'Tocantins', img: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/Bandeira_do_Tocantins.svg' },
-        
-
+        { name: 'luis hamilton', img: 'https://cidadaoconsumidor.com.br/wp-content/uploads/2025/01/lewis-hamilton-mercedes.jpg'},
+        { name: 'tailor suifiti', img: 'https://extra.globo.com/incoming/14570939-809-bf1/w448/taylor-2014.jpg'},
+        {name: 'reui estailor', img: 'https://pbs.twimg.com/media/FoPoD9oWIAAmOia.jpg'},
+        {name: 'nicolas queige', img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxf259zoQHJQiKaFsyHe_Cx1ANx9zmoKRPhA&s'},
+        {name: 'diéque gilenrrou', img: 'https://www.shutterstock.com/editorial/image-editorial/MaT5I02bOaT5g129NjU5ODY=/actor-jake-gyllenhaal-wearing-outfit-by-gucci-440nw-12592454lg.jpg'},
+        // {name: 'roberto patison', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Robert_Pattinson_Premiere_of_The_Lost_City_of_Z_at_Zoo_Palast_Berlinale_2017_02.jpg/250px-Robert_Pattinson_Premiere_of_The_Lost_City_of_Z_at_Zoo_Palast_Berlinale_2017_02.jpg'},
+        {name: 'quite ariton', img: 'https://tm.ibxk.com.br/2022/08/26/26174629947405.jpg'},
+        {name: 'jenifer eston', img: 'https://novun.com.br/wp-content/uploads/2016/07/5-truques-de-beleza-das-celebridades-para-voce-usar-agora-J-A-1.png'},
+        {name: 'ema estone', img:'https://s2-monet.glbimg.com/m-ocSJ0zxH9qBZBMPtainvipQlw=/0x0:1190x1200/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e7c91519bbbb4fadb4e509085746275d/internal_photos/bs/2024/y/z/BasaXnS1AeUGdqHik9sg/emmastone-lalaland.jpg'},
+        {name: 'rian goslim', img:'https://i.pinimg.com/originals/73/55/3c/73553c722285643d0f2b4a2cceba617b.jpg'},
+        {name: 'ane ratuei', img:'https://uploads.metroimg.com/wp-content/uploads/2024/05/08123833/Anne-Hathaway_2.jpg'},
+        {name: 'amanda seifrendi', img:'https://tm.ibxk.com.br//ms/images/highlights/000/044/299/41877.jpg'},
+        { name: 'merui estriper', img: 'https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/08/meryl-streep-in-mamma-mia.jpg' },
+        { name: 'sofia tarne', img: 'https://www.estadao.com.br/resizer/v2/UUM6JE23ZVM6DIW5E6NCKLXDMI.jpg?quality=80&auth=140695ceac890642b94bd78e29f3429dcff63f4518a14145806540f6be525726&width=380' },
+        { name: 'emilia clarque', img: 'https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2024/06/11173653/Emilia-Clarke-teve-medo-de-ser-demitida-de-Game-of-Thornes-apos-aneurismas-620x620.webp' },
     ];
 
     function initializeGame() {
